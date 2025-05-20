@@ -558,6 +558,13 @@ _ALWAYS_INLINE_ bool is_zero_approx(float p_value) {
 	return abs(p_value) < (float)CMP_EPSILON;
 }
 
+_ALWAYS_INLINE_ bool is_zero_approx(double p_value, double p_tolerance) {
+	return abs(p_value) < p_tolerance;
+}
+_ALWAYS_INLINE_ bool is_zero_approx(float p_value, float p_tolerance) {
+	return abs(p_value) < p_tolerance;
+}
+
 _ALWAYS_INLINE_ bool is_same(double p_left, double p_right) {
 	return (p_left == p_right) || (is_nan(p_left) && is_nan(p_right));
 }
