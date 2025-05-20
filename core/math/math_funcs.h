@@ -594,6 +594,10 @@ public:
 		return abs(s) < (float)CMP_EPSILON;
 	}
 
+	static _ALWAYS_INLINE_ bool is_zero_approx(float s, float tolerance) {
+		return abs(s) < tolerance;
+	}
+
 	static _ALWAYS_INLINE_ bool is_equal_approx(double a, double b) {
 		// Check for exact equality first, required to handle "infinity" values.
 		if (a == b) {
